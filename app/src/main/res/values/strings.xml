@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Hospital_Management</string>
+    <string name="menuTitle">Staff Menu</string>
+    <string name="addStaff">Add Staff</string>
+    <string name="staffView">View Staff</string>
+    <string name="staffDelete">Delete Staff</string>
+    <string name="staffUpdate">Update Staff</string>
+    <string name="mainMenu">Main Menu</string>
+    <string name="title_activity_staff_add">Staff_add</string>
+    <string name="title_activity_staff__addn">staff_Addn</string>
+</resources>

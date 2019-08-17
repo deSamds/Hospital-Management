@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    tools:context=".staff_menu">
+
+    <TextView
+        android:id="@+id/stf_menu"
+        android:layout_width="190dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorAccent"
+        android:fontFamily="sans-serif-black"
+        android:text="Staff Menu"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.066" />
+
+    <ImageButton
+        android:id="@+id/btnStaffUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:onClick="staffUpdate"
+        app:layout_constraintBottom_toBottomOf="@+id/btnStaffDelete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnStaffDelete"
+        app:layout_constraintTop_toTopOf="@+id/btnStaffDelete"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/upd" />
+
+    <ImageButton
+        android:id="@+id/btnStaffDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="deleteStaff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnStaffUpdate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/del" />
+
+    <ImageButton
+        android:id="@+id/btnStaffView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:onClick="viewStaff"
+        app:layout_constraintBottom_toBottomOf="@+id/btnStaffAdd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnStaffAdd"
+        app:layout_constraintTop_toTopOf="@+id/btnStaffAdd"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/vie" />
+
+    <ImageButton
+        android:id="@+id/btnStaffAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="144dp"
+        android:onClick="addStaff"
+        app:layout_constraintEnd_toStartOf="@+id/btnStaffView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rsz_businessman_add" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/addStaff"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnStaffAdd"
+        app:layout_constraintStart_toStartOf="@+id/btnStaffAdd"
+        app:layout_constraintTop_toBottomOf="@+id/btnStaffAdd" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/staffView"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnStaffView"
+        app:layout_constraintStart_toStartOf="@+id/btnStaffView"
+        app:layout_constraintTop_toBottomOf="@+id/btnStaffView" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/staffDelete"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnStaffDelete"
+        app:layout_constraintStart_toStartOf="@+id/btnStaffDelete"
+        app:layout_constraintTop_toBottomOf="@+id/btnStaffDelete" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/staffUpdate"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnStaffUpdate"
+        app:layout_constraintStart_toStartOf="@+id/btnStaffUpdate"
+        app:layout_constraintTop_toBottomOf="@+id/btnStaffUpdate" />
+</androidx.constraintlayout.widget.ConstraintLayout>
