@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">Hospital_Management</string>
     <string name="menuTitle">Staff Menu</string>
     <string name="addStaff">Add Staff</string>
@@ -8,4 +9,41 @@
     <string name="mainMenu">Main Menu</string>
     <string name="title_activity_staff_add">Staff_add</string>
     <string name="title_activity_staff__addn">staff_Addn</string>
+
+
+    <string name="update_topic">Update Drugs</string>
+    <string name="update_name">Name</string>
+    <string name="update_manufacturer">Manufacturer</string>
+    <string name="update_quantity">Quantity</string>
+    <string name="update_price">Price</string>
+    <string name="update_description">Description</string>
+    <string name="update_name_get"></string>
+    <string name="update_manufacturer_get"></string>
+    <string name="update_quantity_get"></string>
+    <string name="update_price_get"></string>
+    <string name="update_description_get"></string>
+    <string name="update_btn_update">Update</string>
+    <string name="update_btn_remove">Remove</string>
+
+
+    <string name="main_btn1">View Drugs List</string>
+    <string name="main_btn2">Insert New Drug</string>
+    <string name="main_btn3">To Home</string>
+
+    <string name="insert_topic">Insert Drugs</string>
+    <string name="insert_name">Name</string>
+    <string name="insert_manufacturer">Manufacturer</string>
+    <string name="insert_quantity">Quantity</string>
+    <string name="insert_price">Price</string>
+    <string name="insert_description">Description</string>
+    <string name="insert_name_get"></string>
+    <string name="insert_manufacturer_get"></string>
+    <string name="insert_quantity_get"></string>
+    <string name="insert_price_get"></string>
+    <string name="insert_description_get"></string>
+    <string name="insert_btn_insert">Insert</string>
+
+    <string name="view_table_head1">ID</string>
+    <string name="view_table_head2">Name</string>
+    <string name="view_table_head3">Qty</string>
 </resources>

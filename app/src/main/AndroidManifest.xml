@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".staff_add"></activity>
+        <activity android:name=".Activity_Insert_drugs"></activity>
+        <activity android:name=".Activity_View_drugs" />
+        <activity android:name=".Activity_Update_Remove_drugs" />
+        <activity android:name=".Activity_Drug_main" />
+        <activity android:name=".staff_add" />
         <activity android:name=".login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
