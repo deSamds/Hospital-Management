@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     String userName;
     TextView txtViewUser;
-    ImageButton imageButtonDrug;
+    ImageButton imageButtonDrug, imageButtonDoctor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +28,25 @@ public class MainActivity extends AppCompatActivity {
         txtViewUser.setText(userName);
 
         imageButtonDrug=findViewById(R.id.main_drug);
+        imageButtonDoctor = findViewById(R.id.btn_main_doc);
 
         imageButtonDrug.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent1 = new Intent(MainActivity.this, Activity_Drug_main.class);
                 startActivity(intent1);
+
+        imageButtonDoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(MainActivity.this,Doctor_Main.class);
+                startActivity(intent2);
             }
         });
+            }
+        });
+
+
     }
 
     public void staffMenu(View view) {

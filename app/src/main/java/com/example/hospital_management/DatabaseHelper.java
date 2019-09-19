@@ -13,6 +13,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static String DATABASE_NAME="hospital_database";
     //private static final int DATABASE_VERSION = 4;
 
+
     private static final String TABLE_DRUGS = "drugs";
     private static final String KEY_DRUGID = "id";
     private static final String KEY_DRUGNAME = "name";
@@ -22,7 +23,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String KEY_DESCRIPTION = "description";
 
     private static final String CREATE_TABLE_DRUGS = "CREATE TABLE " + TABLE_DRUGS + "(" + KEY_DRUGID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_DRUGNAME + " TEXT, "+ KEY_MANUFACTURER + " TEXT, "+ KEY_QUANTITY + " TEXT, "+ KEY_PRICE + " TEXT, "+ KEY_DESCRIPTION + " TEXT );";
-
+ //   private static final String CREATE_TABLE_DOCTORS = "CREATE TABLE " + UserMaster.Doctors.TABLE_NAME + "(" +UserMaster.Doctors.doctor_ID + "INTEGER PRIMARY KEY AUTOINCREMENT," + UserMaster.Doctors.doctor_name + " TEXT,"+ UserMaster.Doctors.doctor_age + "TEXT," +UserMaster.Doctors.doctor_designation+ " TEXT," +UserMaster.Doctors.doctor_address+ "TEXT," +UserMaster.Doctors.doctor_phone+ "TEXT," +UserMaster.Doctors.doctor_ward + "TEXT)";
+    private static final String CREATE_TABLE_DOCTORS =  "CREATE TABLE " + UserMaster.Doctors.TABLE_NAME+ "(ID INTEGER PRIMARY KEY, name TEXT, age TEXT, designation TEXT, address TEXT, phone TEXT, ward TEXT)";
     public DatabaseHelper(Context context) {
         super(context,DATABASE_NAME,null,1);
     }
@@ -30,11 +32,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_DRUGS);
-    }
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int old, int i1) {
-
+        db.execSQL(CREATE_TABLE_DOCTORS);
     }
 
     public Boolean addDrugsDetail(String name, String manufacturer, String quantity, String price, String description) {
@@ -54,8 +52,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }else {
             return false;
         }
-
-
     }
 
     public ArrayList<DrugModel> getAllDrugs() {
@@ -131,8 +127,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }else {
             return false;
         }
-
-
     }
 
 
@@ -186,9 +180,89 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return drugsModels;
     }
 
+    //------------------------------------------------------------------------------
+    //Doctor Management ==================
+
+    public ArrayList<Doctors> getdoctorInfo() {
+
+        ArrayList<Doctors> doctorsArrayList = new ArrayList<>();
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor data = db.rawQuery("SELECT * FROM " + UserMaster.Doctors.TABLE_NAME,null);
+
+        if(data.moveToFirst()) {
+            do{
+                Doctors doctors = new Doctors();
+                doctors.setId(data.getInt(0) + "");
+                doctors.setName(data.getString(1));
+                doctors.setAge(data.getString(2));
+                doctors.setDesignation(data.getString(3));
+                doctors.setAddress(data.getString(4));
+                doctors.setPhone(data.getString(5));
+                doctors.setWard(data.getString(6));
+
+                doctorsArrayList.add(doctors);
+            }while (data.moveToNext());
+        }
+        return doctorsArrayList;
+    }
 
 
+    public boolean addData(String name, String age, String desig, String adrs, String tp, String ward) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(UserMaster.Doctors.doctor_name,name);
+        values.put(UserMaster.Doctors.doctor_age,age);
+        values.put(UserMaster.Doctors.doctor_designation,desig);
+        values.put(UserMaster.Doctors.doctor_address,adrs);
+        values.put(UserMaster.Doctors.doctor_phone,tp);
+        values.put(UserMaster.Doctors.doctor_ward,ward);
+
+        long rowID = db.insert(UserMaster.Doctors.TABLE_NAME,null,values);
+
+        if(rowID == -1) {
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    public boolean UpdateDoctor(int id,String name, String age, String desig, String adrs, String tp, String ward) {
+
+        ContentValues values = new ContentValues();
+
+        values.put(UserMaster.Doctors.doctor_name,name);
+        values.put(UserMaster.Doctors.doctor_age,age);
+        values.put(UserMaster.Doctors.doctor_designation,desig);
+        values.put(UserMaster.Doctors.doctor_address,adrs);
+        values.put(UserMaster.Doctors.doctor_phone,tp);
+        values.put(UserMaster.Doctors.doctor_ward,ward);
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        int rowID = db.update(UserMaster.Doctors.TABLE_NAME,values, UserMaster.Doctors.doctor_ID +" = " + id,null);
+        db.close();
+        if(rowID == -1) {
+            return  false;
+        }else
+            return true;
+    }
+
+    public boolean DeleteDoctor(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        int rowID = db.delete(UserMaster.Doctors.TABLE_NAME, UserMaster.Doctors.doctor_ID + " = " + id,null);
+        db.close();
+        if(rowID == -1) {
+            return  false;
+        }else
+            return true;
+    }
 
 
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int old, int i1) {
+
+    }
 
 }
