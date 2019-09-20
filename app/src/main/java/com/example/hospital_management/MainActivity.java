@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -12,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     String userName;
     TextView txtViewUser;
-    ImageButton imageButtonDrug, imageButtonDoctor;
+    Button docBtn, drugBtn, patientBtn, staffBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,26 +28,26 @@ public class MainActivity extends AppCompatActivity {
         txtViewUser = (TextView) findViewById(R.id.txtUser);
         txtViewUser.setText(userName);
 
-        imageButtonDrug=findViewById(R.id.main_drug);
-        imageButtonDoctor = findViewById(R.id.btn_main_doc);
+        docBtn = findViewById(R.id.btn_doc);
+        drugBtn = findViewById(R.id.btn_drug);
+        patientBtn = findViewById(R.id.btn_patient);
+        staffBtn = findViewById(R.id.btn_staff);
 
-        imageButtonDrug.setOnClickListener(new View.OnClickListener() {
+        docBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent1 = new Intent(MainActivity.this, Activity_Drug_main.class);
+                Intent intent1 = new Intent(MainActivity.this, Doctor_Main.class);
                 startActivity(intent1);
+            }
+        });
 
-        imageButtonDoctor.setOnClickListener(new View.OnClickListener() {
+        drugBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(MainActivity.this,Doctor_Main.class);
+                Intent intent2 = new Intent(MainActivity.this, Activity_Drug_main.class);
                 startActivity(intent2);
             }
         });
-            }
-        });
-
-
     }
 
     public void staffMenu(View view) {

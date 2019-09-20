@@ -13,10 +13,10 @@
 
     <string name="update_topic">Update Drugs</string>
     <string name="update_name">Name</string>
-    <string name="update_manufacturer">Manufacturer</string>
+    <string name="update_manufacturer">Producer</string>
     <string name="update_quantity">Quantity</string>
     <string name="update_price">Price</string>
-    <string name="update_description">Description</string>
+    <string name="update_description">Details</string>
     <string name="update_name_get"></string>
     <string name="update_manufacturer_get"></string>
     <string name="update_quantity_get"></string>
@@ -32,10 +32,10 @@
 
     <string name="insert_topic">Insert Drugs</string>
     <string name="insert_name">Name</string>
-    <string name="insert_manufacturer">Manufacturer</string>
+    <string name="insert_manufacturer">Producer</string>
     <string name="insert_quantity">Quantity</string>
     <string name="insert_price">Price</string>
-    <string name="insert_description">Description</string>
+    <string name="insert_description">Details</string>
     <string name="insert_name_get"></string>
     <string name="insert_manufacturer_get"></string>
     <string name="insert_quantity_get"></string>
@@ -46,4 +46,37 @@
     <string name="view_table_head1">ID</string>
     <string name="view_table_head2">Name</string>
     <string name="view_table_head3">Qty</string>
+
+    <string name="doc_add">NEW DOCTOR</string>
+    <string name="doctor_Name">Name</string>
+    <string name="doctor_age">Age</string>
+    <string name="doctor_designation">Designation</string>
+    <string name="doctor_address">Address</string>
+    <string name="doctor_number">Contact Number</string>
+    <string name="doctor_ward">Ward Number</string>
+    <string name="submit">Submit</string>
+
+    <string name="doc_list">DOCTOR LIST</string>
+    <string name="doc_1">Doctor 1</string>
+    <string name="doc_2">Doctor 2</string>
+    <string name="doc_3">Doctor 3</string>
+    <string name="doc_4">Doctor 4</string>
+    <string name="doc_5">Doctor 5</string>
+    <string name="doc_6">Doctor 6</string>
+    <string name="doc_7">Doctor 7</string>
+    <string name="doc_8">Doctor 8</string>
+    <string name="doc_9">Doctor 9</string>
+    <string name="doc_10">Doctor 10</string>
+
+
+    <string name="edit_details">EDIT DETAILS</string>
+    <string name="view">Dr.XYZ</string>
+
+    <string name="search">Search</string>
+    <string name="save">Save Changes</string>
+    <string name="delete">Delete</string>
+    <string name="edit">EDIT</string>
+
+    <string name="doc_main">DOCTOR MENU</string>
+
 </resources>

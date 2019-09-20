@@ -44,6 +44,5 @@ public class Activity_Drug_main extends AppCompatActivity {
             }
         });
     }
-
 }
 
