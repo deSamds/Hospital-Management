@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import java.util.regex.*;
+import java.util.Scanner;
 
 import java.util.ArrayList;
 
@@ -258,10 +260,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
     }
 
+    public static boolean MobileNumberIsValid(String s)
+        {
+            Pattern p = Pattern.compile("^[0-9]{10}$");
+            Matcher m = p.matcher(s);
+            return (m.find() && m.group().equals(s));
+        }
 
-    @Override
+    public static boolean TextIsValid(String s)
+    {
+        Pattern p = Pattern.compile("^[a-zA-Z_]+");
+        Matcher m = p.matcher(s);
+        return (m.find() && m.group().equals(s));
+    }
+
+    public static boolean NumberIsValid(String s)
+    {
+        Pattern p = Pattern.compile("^[0-9]+");
+        Matcher m = p.matcher(s);
+        return (m.find() && m.group().equals(s));
+    }
+
+        @Override
     public void onUpgrade(SQLiteDatabase db, int old, int i1) {
 
     }
 
 }
+
+

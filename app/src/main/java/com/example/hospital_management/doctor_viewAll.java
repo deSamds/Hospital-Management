@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SearchView;
 
@@ -19,6 +20,7 @@ public class doctor_viewAll extends AppCompatActivity {
     doctor_adapter doc_adapter;
     ListView listView;
     SearchView search;
+    Button home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,8 @@ public class doctor_viewAll extends AppCompatActivity {
         search = findViewById(R.id.doc_search);
 
         dbhelper = new DatabaseHelper(this);
+
+        home = findViewById(R.id.btnViewAll_home);
 
         doc_arr = new ArrayList<>();
         doc_arr = dbhelper.getdoctorInfo();
@@ -66,6 +70,14 @@ public class doctor_viewAll extends AppCompatActivity {
                 intent.putExtra("phone",doctors.getPhone());
                 intent.putExtra("ward",doctors.getWard());
                 startActivity(intent);
+            }
+        });
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(doctor_viewAll.this, Doctor_Main.class);
+                startActivity(in);
             }
         });
     }

@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class doctor_edit extends AppCompatActivity {
     EditText doc_name, doc_age,doc_desig,doc_adrs,doc_phone,doc_ward;
     TextView doc_id;
-    Button save;
+    Button save,home;
     DatabaseHelper helperdb;
     SQLiteDatabase db;
     String name,desig,adrs,ward,phone,age,id;
@@ -26,6 +26,8 @@ public class doctor_edit extends AppCompatActivity {
         setContentView(R.layout.activity_doctor_edit);
 
         helperdb = new DatabaseHelper(this);
+
+        home = findViewById(R.id.btn_homeEdit);
 
         save = findViewById(R.id.btn_save);
 
@@ -70,6 +72,14 @@ public class doctor_edit extends AppCompatActivity {
                     Toast.makeText(doctor_edit.this, "Something Went Wrong!", Toast.LENGTH_SHORT).show();
 
                 Intent in = new Intent(doctor_edit.this,doctor_viewAll.class);
+                startActivity(in);
+            }
+        });
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(doctor_edit.this, Doctor_Main.class);
                 startActivity(in);
             }
         });

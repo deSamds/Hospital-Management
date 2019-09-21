@@ -18,7 +18,7 @@ public class Doctor_Main extends AppCompatActivity {
 
         add = findViewById(R.id.btn_add);
         edit = findViewById(R.id.btn_edit);
-        delete = findViewById(R.id.btn_delete);
+        delete = findViewById(R.id.btnMain_home);
         search = findViewById(R.id.btn_search);
 
     }
@@ -39,7 +39,7 @@ public class Doctor_Main extends AppCompatActivity {
     }
 
     public void deleteDoctor(View view) {
-        Intent in = new Intent(Doctor_Main.this,doctor_viewAll.class);
+        Intent in = new Intent(Doctor_Main.this,MainActivity.class);
         startActivity(in);
     }
 }

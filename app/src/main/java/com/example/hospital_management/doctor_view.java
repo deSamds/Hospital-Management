@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 public class doctor_view extends AppCompatActivity {
 
-    Button edit, delete;
+    Button edit, delete,home;
     SQLiteDatabase db;
     DatabaseHelper helper;
     TextView dname, age, desig, adrs, phone, ward, id;
@@ -26,8 +26,9 @@ public class doctor_view extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_view);
 
+        home = findViewById(R.id.btnView_home);
         edit = findViewById(R.id.btn_edit);
-        delete = findViewById(R.id.btn_delete);
+        delete = findViewById(R.id.btnMain_home);
 
         id = findViewById(R.id.doctor_id);
         dname = findViewById(R.id.doctor_name);
@@ -86,6 +87,14 @@ public class doctor_view extends AppCompatActivity {
 
                 AlertDialog alertDialog = deleteConfirm();
                 alertDialog.show();
+            }
+        });
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(doctor_view.this, Doctor_Main.class);
+                startActivity(in);
             }
         });
 

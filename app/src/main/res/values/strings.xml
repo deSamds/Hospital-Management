@@ -1,6 +1,9 @@
 <resources>
 
     <string name="app_name">Hospital_Management</string>
+
+    <string name="hospital_name">LIFECARE HOSPITALS</string>
+
     <string name="menuTitle">Staff Menu</string>
     <string name="addStaff">Add Staff</string>
     <string name="staffView">View Staff</string>
@@ -57,26 +60,21 @@
     <string name="submit">Submit</string>
 
     <string name="doc_list">DOCTOR LIST</string>
-    <string name="doc_1">Doctor 1</string>
-    <string name="doc_2">Doctor 2</string>
-    <string name="doc_3">Doctor 3</string>
-    <string name="doc_4">Doctor 4</string>
-    <string name="doc_5">Doctor 5</string>
-    <string name="doc_6">Doctor 6</string>
-    <string name="doc_7">Doctor 7</string>
-    <string name="doc_8">Doctor 8</string>
-    <string name="doc_9">Doctor 9</string>
-    <string name="doc_10">Doctor 10</string>
-
 
     <string name="edit_details">EDIT DETAILS</string>
     <string name="view">Dr.XYZ</string>
 
+    <string name="back_home">Back to Home</string>
     <string name="search">Search</string>
     <string name="save">Save Changes</string>
     <string name="delete">Delete</string>
-    <string name="edit">EDIT</string>
+    <string name="editDelete">EDIT / delete</string>
+    <string name="edit">edit</string>
 
     <string name="doc_main">DOCTOR MENU</string>
+
+    <string name="title_activity_hospital_management">Hospital_management</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 </resources>

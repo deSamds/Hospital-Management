@@ -28,8 +28,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="355dp"
-        android:layout_height="296dp"
+        android:layout_width="299dp"
+        android:layout_height="284dp"
         android:layout_marginStart="61dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="37dp"
@@ -37,16 +37,16 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.785"
+        app:layout_constraintHorizontal_bias="0.239"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.856">
+        app:layout_constraintVertical_bias="0.872">
 
         <Button
             android:id="@+id/btn_staff"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@android:color/holo_purple"
+            android:background="@drawable/btnpurple"
             android:text="staff"
             android:textColor="@android:color/background_light" />
 
@@ -58,7 +58,7 @@
             android:id="@+id/btn_doc"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@android:color/holo_red_light"
+            android:background="@drawable/btnredlight"
             android:text="doctors"
             android:textColor="@color/colorAccent" />
 
@@ -70,7 +70,7 @@
             android:id="@+id/btn_drug"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/btnLogin"
+            android:background="@drawable/btnprimary"
             android:text="drugs"
             android:textColor="@android:color/background_light" />
 
@@ -82,7 +82,7 @@
             android:id="@+id/btn_patient"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@android:color/darker_gray"
+            android:background="@drawable/btngrey"
             android:text="patients"
             android:textColor="@android:color/background_light" />
     </LinearLayout>
