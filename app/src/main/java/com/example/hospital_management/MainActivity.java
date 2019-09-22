@@ -4,16 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     String userName;
-    TextView txtViewUser;
     Button docBtn, drugBtn, patientBtn, staffBtn;
+    ImageView logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,14 +28,13 @@ public class MainActivity extends AppCompatActivity {
         if(userData == null) {
             return;
         }
-        userName = "Login as " + userData.getString("userName");
-        txtViewUser = (TextView) findViewById(R.id.txtUser);
-        txtViewUser.setText(userName);
 
         docBtn = findViewById(R.id.btn_doc);
         drugBtn = findViewById(R.id.btn_drug);
         patientBtn = findViewById(R.id.btn_patient);
         staffBtn = findViewById(R.id.btn_staff);
+        logout = findViewById(R.id.logout);
+
 
         docBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,12 +51,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent2);
             }
         });
-    }
 
-    public void staffMenu(View view) {
-        Intent intent = new Intent(this, staff_menu.class);
-        startActivity(intent);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent logout = new Intent(MainActivity.this, login.class);
+                startActivity(logout);
+            }
+        });
     }
-
 
 }

@@ -26,6 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_TABLE_DRUGS = "CREATE TABLE " + TABLE_DRUGS + "(" + KEY_DRUGID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_DRUGNAME + " TEXT, "+ KEY_MANUFACTURER + " TEXT, "+ KEY_QUANTITY + " TEXT, "+ KEY_PRICE + " TEXT, "+ KEY_DESCRIPTION + " TEXT );";//   private static final String CREATE_TABLE_DOCTORS = "CREATE TABLE " + UserMaster.Doctors.TABLE_NAME + "(" +UserMaster.Doctors.doctor_ID + "INTEGER PRIMARY KEY AUTOINCREMENT," + UserMaster.Doctors.doctor_name + " TEXT,"+ UserMaster.Doctors.doctor_age + "TEXT," +UserMaster.Doctors.doctor_designation+ " TEXT," +UserMaster.Doctors.doctor_address+ "TEXT," +UserMaster.Doctors.doctor_phone+ "TEXT," +UserMaster.Doctors.doctor_ward + "TEXT)";
     private static final String CREATE_TABLE_DOCTORS =  "CREATE TABLE " + UserMaster.Doctors.TABLE_NAME+ "(ID INTEGER PRIMARY KEY, name TEXT, age TEXT, designation TEXT, address TEXT, phone TEXT, ward TEXT)";
+
     public DatabaseHelper(Context context) {
         super(context,DATABASE_NAME,null,1);
     }
@@ -34,6 +35,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_DRUGS);
         db.execSQL(CREATE_TABLE_DOCTORS);
+
     }
 
     public Boolean addDrugsDetail(String name, String manufacturer, String quantity, String price, String description) {

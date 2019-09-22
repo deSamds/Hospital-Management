@@ -17,8 +17,10 @@
         android:background="@android:color/background_light"
         android:fontFamily="sans-serif-black"
         android:text="@string/mainMenu"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
+        android:textColor="@android:color/system_notification_accent_color"
+        android:textColorLink="#00000000"
+        android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -28,7 +30,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="299dp"
+        android:layout_width="326dp"
         android:layout_height="284dp"
         android:layout_marginStart="61dp"
         android:layout_marginTop="8dp"
@@ -37,10 +39,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.239"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.872">
+        app:layout_constraintVertical_bias="0.582">
 
         <Button
             android:id="@+id/btn_staff"
@@ -52,7 +54,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            android:layout_height="15dp" />
 
         <Button
             android:id="@+id/btn_doc"
@@ -60,11 +62,11 @@
             android:layout_height="50dp"
             android:background="@drawable/btnredlight"
             android:text="doctors"
-            android:textColor="@color/colorAccent" />
+            android:textColor="@android:color/background_light" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            android:layout_height="15dp" />
 
         <Button
             android:id="@+id/btn_drug"
@@ -76,7 +78,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            android:layout_height="15dp" />
 
         <Button
             android:id="@+id/btn_patient"
@@ -87,20 +89,20 @@
             android:textColor="@android:color/background_light" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/txtUser"
-        android:layout_width="wrap_content"
-        android:layout_height="43dp"
+    <ImageView
+        android:id="@+id/logout"
+        android:layout_width="61dp"
+        android:layout_height="57dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="UserName"
-        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.913"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.088" />
+        app:layout_constraintVertical_bias="0.952"
+        app:srcCompat="@drawable/logout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

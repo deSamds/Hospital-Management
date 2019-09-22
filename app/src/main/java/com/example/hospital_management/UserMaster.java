@@ -16,4 +16,5 @@ public class UserMaster {
         public static final String doctor_phone = "phone";
         public static final String doctor_ward = "ward";
     }
+
 }
