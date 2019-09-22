@@ -52,6 +52,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        staffBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent3 = new Intent(MainActivity.this, staff_menu.class);
+                startActivity(intent3);
+            }
+        });
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

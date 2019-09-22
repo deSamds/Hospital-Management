@@ -24,8 +24,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String KEY_PRICE = "price";
     private static final String KEY_DESCRIPTION = "description";
 
+
+    private static final String TABLE_STAFF = "staff";
+    private static final String S_ID = "id";
+    private static final String S_NAME = "name";
+    private static final String S_AGE = "age";
+    private static final String S_GENDER = "gender";
+    private static final String S_ADDRESS = "address";
+    private static final String S_CONTACT = "conactno";
+    private static final String S_ROLE = "role";
+
     private static final String CREATE_TABLE_DRUGS = "CREATE TABLE " + TABLE_DRUGS + "(" + KEY_DRUGID + " INTEGER PRIMARY KEY AUTOINCREMENT," + KEY_DRUGNAME + " TEXT, "+ KEY_MANUFACTURER + " TEXT, "+ KEY_QUANTITY + " TEXT, "+ KEY_PRICE + " TEXT, "+ KEY_DESCRIPTION + " TEXT );";//   private static final String CREATE_TABLE_DOCTORS = "CREATE TABLE " + UserMaster.Doctors.TABLE_NAME + "(" +UserMaster.Doctors.doctor_ID + "INTEGER PRIMARY KEY AUTOINCREMENT," + UserMaster.Doctors.doctor_name + " TEXT,"+ UserMaster.Doctors.doctor_age + "TEXT," +UserMaster.Doctors.doctor_designation+ " TEXT," +UserMaster.Doctors.doctor_address+ "TEXT," +UserMaster.Doctors.doctor_phone+ "TEXT," +UserMaster.Doctors.doctor_ward + "TEXT)";
     private static final String CREATE_TABLE_DOCTORS =  "CREATE TABLE " + UserMaster.Doctors.TABLE_NAME+ "(ID INTEGER PRIMARY KEY, name TEXT, age TEXT, designation TEXT, address TEXT, phone TEXT, ward TEXT)";
+    private static final String CREATE_TABLE_STAFF = "CREATE TABLE " + TABLE_STAFF + "(" + S_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + S_NAME + " TEXT, " + S_AGE + " TEXT ,  " + S_GENDER + " TEXT,   " + S_ADDRESS + " TEXT ,   " + S_CONTACT + " TEXT ,   " + S_ROLE + " TEXT   );";
 
     public DatabaseHelper(Context context) {
         super(context,DATABASE_NAME,null,1);
@@ -35,6 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_DRUGS);
         db.execSQL(CREATE_TABLE_DOCTORS);
+        db.execSQL(CREATE_TABLE_STAFF);
 
     }
 
@@ -287,6 +299,117 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int old, int i1) {
 
     }
+
+
+    /*Staff*/
+    public boolean addStaffDetail(String name, String age, String gender, String address, String contactno, String role) {
+        SQLiteDatabase db = getReadableDatabase();
+        //creating values
+        ContentValues values = new ContentValues();
+        values.put(S_NAME, name);
+        values.put(S_AGE, age);
+        values.put(S_GENDER, gender);
+        values.put(S_ADDRESS, address);
+        values.put(S_CONTACT, contactno);
+        values.put(S_ROLE, role);
+
+        long insert = db.insert(TABLE_STAFF, null, values);
+
+        if (insert >= 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public ArrayList<StaffModel> getAllStaff() {
+        ArrayList<StaffModel> staffModelArrayList = null;
+
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM " + TABLE_STAFF, null);
+
+
+        if (c.moveToFirst()) {
+            staffModelArrayList = new ArrayList<StaffModel>();
+            do {
+                StaffModel staffModel = new StaffModel();
+
+                staffModel.setId(c.getInt(c.getColumnIndex(S_ID)));
+                staffModel.setName(c.getString(c.getColumnIndex(S_NAME)));
+                staffModel.setAge(c.getString(c.getColumnIndex(S_AGE)));
+                staffModel.setGender(c.getString(c.getColumnIndex(S_GENDER)));
+                staffModel.setAddress(c.getString(c.getColumnIndex(S_ADDRESS)));
+                staffModel.setConactno(c.getString(c.getColumnIndex(S_CONTACT)));
+                staffModel.setRole(c.getString(c.getColumnIndex(S_ROLE)));
+
+                staffModelArrayList.add(staffModel);
+            } while (c.moveToNext());
+        }
+        return staffModelArrayList;
+
+    }
+
+    public ArrayList<StaffModel> getStaff(String id) {
+
+        ArrayList<StaffModel> staffArray = null;
+        SQLiteDatabase db=getReadableDatabase();
+        String[] args={id};
+        Cursor c=db.rawQuery("SELECT * FROM "+TABLE_STAFF+" WHERE "+S_ID+" = ?",args);
+        if (c.moveToFirst()){
+
+            staffArray=new ArrayList<StaffModel>();
+            do {
+                StaffModel staffMod = new StaffModel();
+                staffMod.setId(c.getInt(c.getColumnIndex(S_ID)));
+                staffMod.setName(c.getString(c.getColumnIndex(S_NAME)));
+                staffMod.setAge(c.getString(c.getColumnIndex(S_AGE)));
+                staffMod.setGender(c.getString(c.getColumnIndex(S_GENDER)));
+                staffMod.setAddress(c.getString(c.getColumnIndex(S_ADDRESS)));
+                staffMod.setConactno(c.getString(c.getColumnIndex(S_CONTACT)));
+                staffMod.setRole(c.getString(c.getColumnIndex(S_ROLE)));
+                staffArray.add(staffMod);
+
+            }while (c.moveToNext());
+
+        }
+        return staffArray;
+    }
+
+
+    public Boolean updateStaff(int id, String name,String age, String gender, String address, String contactno,String role){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(this.S_NAME, name);
+        values.put(this.S_AGE, age);
+        values.put(this.S_GENDER, gender);
+        values.put(this.S_ADDRESS, address);
+        values.put(this.S_CONTACT, contactno);
+        values.put(this.S_ROLE, role);
+
+
+        int row=db.update(TABLE_STAFF, values, S_ID + " = ?",new String[]{String.valueOf(id)});
+        if (row>=1){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+
+    public Boolean deleteStaff(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        int row=db.delete(TABLE_STAFF, S_ID + " = ?",
+                new String[]{String.valueOf(id)});
+
+
+        if (row>=1){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
 
 }
 

@@ -58,7 +58,7 @@
             android:layout_height="50dp"
             android:autofillHints=""
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="number" />
 
         <TextView
             android:id="@+id/doc_desig"
@@ -103,7 +103,7 @@
             android:layout_height="50dp"
             android:autofillHints=""
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="number" />
 
         <TextView
             android:id="@+id/doc_ward"
@@ -118,7 +118,7 @@
             android:layout_height="50dp"
             android:autofillHints=""
             android:ems="10"
-            android:inputType="textPersonName" />
+            android:inputType="number" />
 
     </LinearLayout>
 

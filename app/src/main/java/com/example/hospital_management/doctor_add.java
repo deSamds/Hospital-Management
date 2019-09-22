@@ -52,8 +52,6 @@ public class doctor_add extends AppCompatActivity {
                     Toast.makeText(doctor_add.this,"Invalid Name!", Toast.LENGTH_SHORT).show();
                 }else if(helperdb.NumberIsValid(age)==false){
                     Toast.makeText(doctor_add.this,"Invalid age!", Toast.LENGTH_SHORT).show();
-                }else if( helperdb.TextIsValid(desig)==false) {
-                    Toast.makeText(doctor_add.this,"Invalid designation!", Toast.LENGTH_SHORT).show();
                 }else if(helperdb.MobileNumberIsValid(tp)==false) {
                     Toast.makeText(doctor_add.this,"Invalid Contact Number!", Toast.LENGTH_SHORT).show();
                 } else if(helperdb.NumberIsValid(ward)==false ) {

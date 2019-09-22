@@ -46,10 +46,6 @@
     <string name="insert_description_get"></string>
     <string name="insert_btn_insert">Insert</string>
 
-    <string name="view_table_head1">ID</string>
-    <string name="view_table_head2">Name</string>
-    <string name="view_table_head3">Qty</string>
-
     <string name="doc_add">NEW DOCTOR</string>
     <string name="doctor_Name">Name</string>
     <string name="doctor_age">Age</string>
@@ -77,5 +73,37 @@
     <string name="title_activity_hospital_management">Hospital_management</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="insert_staff">Insert</string>
+    <string name="insert_st_name">Name</string>
+    <string name="insert_st_age">Age</string>
+    <string name="insert_st_gender">Gender</string>
+    <string name="insert_st_address">Address</string>
+    <string name="insert_st_contact">Contact</string>
+    <string name="insert_st_role">Role</string>
+    <string name="st_tb_view_1">ID</string>
+    <string name="st_tb_view_2">Name</string>
+    <string name="st_tb_view_3">Role</string>
+
+    <string name="update_staff">Update</string>
+    <string name="delete_staff">Delete</string>
+    <string name="update_st_name">Name</string>
+    <string name="update_st_age">Age</string>
+    <string name="update_st_gender">Gender</string>
+    <string name="update_st_address">Address</string>
+    <string name="update_st_contact">Contact</string>
+    <string name="update_st_role">Role</string>
+
+    <string name="title_activity_staff_viewn">Activity_staff_viewn</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="staffInsert"> Insert Staff</string>
+    <string name="staffSearch"> Search Staff</string>
+
+
+    <string name="view_table_head1">ID</string>
+    <string name="view_table_head2">Name</string>
+    <string name="view_table_head3">Qty</string>
+
 
 </resources>

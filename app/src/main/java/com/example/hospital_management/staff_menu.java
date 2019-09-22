@@ -33,4 +33,9 @@ public class staff_menu extends AppCompatActivity {
         Intent intent = new Intent(this, Staff_Update.class);
         startActivity(intent);
     }
+
+    public void back(View view) {
+        Intent intent =  new Intent(staff_menu.this, MainActivity.class);
+        startActivity(intent);
+    }
 }

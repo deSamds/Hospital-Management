@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".login"></activity>
+        <activity android:name=".staff_search"></activity>
+        <activity android:name=".login" />
         <activity android:name=".doctor_viewAll" />
         <activity android:name=".doctor_view" />
         <activity android:name=".doctor_edit" />
