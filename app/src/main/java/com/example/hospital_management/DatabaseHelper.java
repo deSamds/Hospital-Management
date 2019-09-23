@@ -281,27 +281,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return (m.find() && m.group().equals(s));
         }
 
-    public static boolean TextIsValid(String s)
-    {
-        Pattern p = Pattern.compile("^[a-zA-Z_]+");
-        Matcher m = p.matcher(s);
-        return (m.find() && m.group().equals(s));
-    }
-
-    public static boolean NumberIsValid(String s)
-    {
-        Pattern p = Pattern.compile("^[0-9]+");
-        Matcher m = p.matcher(s);
-        return (m.find() && m.group().equals(s));
-    }
-
         @Override
     public void onUpgrade(SQLiteDatabase db, int old, int i1) {
 
     }
 
 
-    /*Staff*/
+    //Staff Management--------------------------------------------------------------
+
     public boolean addStaffDetail(String name, String age, String gender, String address, String contactno, String role) {
         SQLiteDatabase db = getReadableDatabase();
         //creating values

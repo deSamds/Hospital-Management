@@ -8,9 +8,28 @@
 
     tools:context=".login">
 
+    <TextView
+        android:id="@+id/hospital_name2"
+        android:layout_width="wrap_content"
+        android:layout_height="67dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="serif"
+        android:text="@string/hospital_name"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.575"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
     <LinearLayout
-        android:layout_width="280dp"
-        android:layout_height="547dp"
+        android:layout_width="257dp"
+        android:layout_height="422dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -19,7 +38,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498">
 
         <ImageView
             android:layout_width="188dp"
@@ -62,10 +82,10 @@
         <Button
             android:id="@+id/loginbtn"
             style="@style/Base.Widget.AppCompat.Button.Colored"
-            android:layout_width="wrap_content"
+            android:layout_width="113dp"
             android:layout_height="35dp"
             android:layout_gravity="center"
-            android:background="@color/btnLogin"
+            android:background="@drawable/btnprimary"
             android:bufferType="normal"
             android:capitalize="sentences"
             android:fontFamily="sans-serif-black"

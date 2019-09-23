@@ -46,16 +46,11 @@ public class doctor_add extends AppCompatActivity {
                 tp = doc_tp.getText().toString();
                 ward = doc_ward.getText().toString();
 
-                if(doc_name.length() == 0 &&  doc_age.length() == 0 && doc_adrs.length() == 0 && doc_desig.length() == 0 && doc_tp.length() == 0 && doc_ward.length() == 0) {
+                if(doc_name.length() == 0 &&  doc_age.length() == 0 && doc_adrs.length() == 0 &&
+                        doc_desig.length() == 0 && doc_tp.length() == 0 && doc_ward.length() == 0) {
                     Toast.makeText(doctor_add.this,"Fields can not be empty!", Toast.LENGTH_SHORT).show();
-                }else if(helperdb.TextIsValid(name)==false) {
-                    Toast.makeText(doctor_add.this,"Invalid Name!", Toast.LENGTH_SHORT).show();
-                }else if(helperdb.NumberIsValid(age)==false){
-                    Toast.makeText(doctor_add.this,"Invalid age!", Toast.LENGTH_SHORT).show();
-                }else if(helperdb.MobileNumberIsValid(tp)==false) {
+                }else if(!DatabaseHelper.MobileNumberIsValid(tp)) {
                     Toast.makeText(doctor_add.this,"Invalid Contact Number!", Toast.LENGTH_SHORT).show();
-                } else if(helperdb.NumberIsValid(ward)==false ) {
-                    Toast.makeText(doctor_add.this,"Invalid Ward Number!", Toast.LENGTH_SHORT).show();
                 } else {
                     insertData(name,age,adrs,desig,tp,ward);
 

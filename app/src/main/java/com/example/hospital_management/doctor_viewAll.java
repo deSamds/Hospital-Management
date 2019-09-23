@@ -29,14 +29,12 @@ public class doctor_viewAll extends AppCompatActivity {
 
         listView = findViewById(R.id.listview);
         search = findViewById(R.id.doc_search);
+        home = findViewById(R.id.btnViewAll_home);
 
         dbhelper = new DatabaseHelper(this);
 
-        home = findViewById(R.id.btnViewAll_home);
-
         doc_arr = new ArrayList<>();
         doc_arr = dbhelper.getdoctorInfo();
-
         doc_adapter = new doctor_adapter(this,dbhelper.getdoctorInfo());
 
         listView.setAdapter(doc_adapter);
@@ -59,7 +57,7 @@ public class doctor_viewAll extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //get the position on list items
                 doctors =  doc_adapter.getItem(position);
-                Intent intent = new Intent(doctor_viewAll.this,doctor_view.class);
+                Intent intent = new Intent(doctor_viewAll.this, doctor_view.class);
 
                 //set key and data from database
                 intent.putExtra("id",doctors.getId());

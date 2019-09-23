@@ -2,6 +2,7 @@ package com.example.hospital_management;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ public class doctor_edit extends AppCompatActivity {
     String name,desig,adrs,ward,phone,age,id;
     int getID;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,10 +65,12 @@ public class doctor_edit extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                boolean result =  helperdb.UpdateDoctor(getID,doc_name.getText().toString(),doc_age.getText().toString(),doc_desig.getText().toString(),doc_adrs.getText().toString(),doc_phone.getText().toString(),doc_ward.getText().toString());
+                boolean result =  helperdb.UpdateDoctor(getID,doc_name.getText().toString(),
+                        doc_age.getText().toString(),doc_desig.getText().toString(),doc_adrs.getText().toString(),
+                        doc_phone.getText().toString(),doc_ward.getText().toString());
                 finish();
 
-                if(result==true) {
+                if(result) {
                     Toast.makeText(doctor_edit.this, "Successfully Updated!", Toast.LENGTH_SHORT).show();
                 }else
                     Toast.makeText(doctor_edit.this, "Something Went Wrong!", Toast.LENGTH_SHORT).show();
