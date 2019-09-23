@@ -38,4 +38,9 @@ public class staff_menu extends AppCompatActivity {
         Intent intent =  new Intent(staff_menu.this, MainActivity.class);
         startActivity(intent);
     }
+
+    public void search_st(View view) {
+        Intent intent = new Intent(this,staff_search.class);
+        startActivity(intent);
+    }
 }

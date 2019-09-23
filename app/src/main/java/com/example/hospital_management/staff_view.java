@@ -94,7 +94,7 @@ public class staff_view extends AppCompatActivity {
             TableRow msg = new TableRow(this);
 //            msg.setBackgroundColor(Color.parseColor("FFFFFF"));
             TextView viewmsg = new TextView(this);
-            viewmsg.setText("Empty Staff");
+            //viewmsg.setText("Empty Staff");
             viewmsg.setTextAppearance(getApplicationContext(), R.style.table_row_tView1);
             viewmsg.setGravity(Gravity.CENTER);
             msg.addView(viewmsg);

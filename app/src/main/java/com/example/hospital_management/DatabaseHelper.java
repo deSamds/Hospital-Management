@@ -410,6 +410,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public ArrayList<StaffModel> searchStaff(String staff){
+        ArrayList<StaffModel> staffModels = null;
+
+        try {
+
+            SQLiteDatabase db = getReadableDatabase();
+            Cursor c = db.rawQuery("SELECT * FROM " + TABLE_STAFF + " WHERE " + S_ID + " LIKE ?", new String[]{"%" + staff + "%" });
+
+
+
+            if (c.moveToFirst()){
+                staffModels = new ArrayList<StaffModel>();
+                do {
+                    StaffModel staffMode = new StaffModel();
+                    staffMode.setId(c.getInt(c.getColumnIndex(S_ID)));
+                    staffMode.setName(c.getString(c.getColumnIndex(S_NAME)));
+                    staffMode.setAge(c.getString(c.getColumnIndex(S_AGE)));
+                    staffMode.setGender(c.getString(c.getColumnIndex(S_GENDER)));
+                    staffMode.setAddress(c.getString(c.getColumnIndex(S_ADDRESS)));
+                    staffMode.setConactno(c.getString(c.getColumnIndex(S_CONTACT)));
+                    staffMode.setRole(c.getString(c.getColumnIndex(S_ROLE)));
+
+                    staffModels.add(staffMode);
+                }while (c.moveToNext());
+            }
+
+        }catch (Exception c){
+            staffModels = null;
+        }
+        return staffModels;
+    }
+
 
 }
 

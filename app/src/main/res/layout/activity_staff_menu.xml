@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
+    android:background="@android:color/background_light"
     tools:context=".staff_menu">
 
     <Button
@@ -92,7 +92,7 @@
         android:layout_height="51dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@color/colorAccent"
+        android:background="@android:color/background_light"
         android:fontFamily="sans-serif-black"
         android:text="Staff Menu"
         android:textColor="@color/colorPrimaryDark"
