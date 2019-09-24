@@ -24,10 +24,10 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.569" />
+        app:layout_constraintVertical_bias="0.656" />
 
     <Button
         android:id="@+id/insert_btn2"
@@ -43,10 +43,10 @@
         android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view_btn2"
-        app:layout_constraintVertical_bias="0.931" />
+        app:layout_constraintVertical_bias="0.722" />
 
     <Button
         android:id="@+id/insert_btn4"
@@ -65,7 +65,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view_btn2"
-        app:layout_constraintVertical_bias="0.634" />
+        app:layout_constraintVertical_bias="0.472" />
 
     <Button
         android:id="@+id/insert_btn3"
@@ -84,7 +84,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view_btn2"
-        app:layout_constraintVertical_bias="0.315" />
+        app:layout_constraintVertical_bias="0.222" />
 
     <TextView
         android:id="@+id/stf_menu"
@@ -106,17 +106,16 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="239dp"
-        android:layout_height="185dp"
+        android:layout_width="277dp"
+        android:layout_height="228dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/stf_menu"
-        app:layout_constraintVertical_bias="0.136"
+        app:layout_constraintVertical_bias="0.185"
         app:srcCompat="@drawable/smenu" />
 </androidx.constraintlayout.widget.ConstraintLayout>

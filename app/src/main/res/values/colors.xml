@@ -11,6 +11,7 @@
     <color name="grey">#FFAAAAAA</color>
     <color name="lightBlue">#FF55C0EB</color>
     <color name="redlight">#FFFF4444</color>
+    <color name="white">#FFFFFF</color>
 
     <color name="newcolour">#2196F3</color>
 </resources>

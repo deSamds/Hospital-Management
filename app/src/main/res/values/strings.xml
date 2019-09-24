@@ -69,6 +69,7 @@
 
     <string name="doc_main">DOCTOR MENU</string>
     <string name="logout">Log Out</string>
+    <string name="login">Login</string>
 
     <string name="title_activity_hospital_management">Hospital_management</string>
     <string name="dummy_button">Dummy Button</string>
